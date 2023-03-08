@@ -32,6 +32,3 @@ class FormaTEXT(forms.Form):
     mjerenje_27 = forms.CharField(max_length = 200,label=mark_safe('<strong>26. Zaustavio kišu i ponovo je vratio nakon 3 godine</strong>'), initial='_ _ _ _ _')
     mjerenje_28 = forms.CharField(max_length = 200,label=mark_safe('<strong>27.Koji prorok plače pred razvalinama Jeruzalema?</strong>'), initial='_ _ _ _ _')
     mjerenje_29 = forms.CharField(max_length = 200,label=mark_safe('<strong>28.Tko je prorokovao da će se roditi dijete kojem će ime biti Emanuel?</strong>'), initial='_ _ _ _ _')
-    
-    
-  
