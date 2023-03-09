@@ -61,13 +61,14 @@ class pocetna(TemplateView):
                   mjerenje_22,mjerenje_23,mjerenje_24,mjerenje_25,mjerenje_26,
                   mjerenje_27,mjerenje_28,mjerenje_29]
         odgovori = [x.replace(' ', '') for x in odgovori]
-        print(odgovori)
+        odgovori = [x.lower() for x in odgovori]
+        #print(odgovori)
         tocni_odgovori=['set','metuzalem','henok','40','duga','noa','ur','melkisedek','175','ezav','13','benjamin','400',
                         'job','mojsije','horeb','leviti','aron','40','jošua','jerihon','dalila','david','batšeba','salomon','ilija','jeremija','izajia']
         
         s = set(tocni_odgovori)
         krivi_odgovori = [x for x in odgovori if x not in s]
-        print(krivi_odgovori)
+        #print(krivi_odgovori)
 
         form = FormaTEXT()
       
@@ -76,7 +77,7 @@ class pocetna(TemplateView):
         else:
             tocno="tocno_1"
 
-        print(tocno)
+        #print(tocno)
         args= {'krivi_odgovori':krivi_odgovori,}
        
     
