@@ -25,7 +25,7 @@ SECRET_KEY = '(_xwg50-!iqs3k%1^&ju&sdj0_!m_$cmgbv^%)j8vvpz^qii@*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://emanuel-kviz.up.railway.app/']
 
 
 # Application definition
@@ -120,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+CSRF_TRUSTED_ORIGINS = ['https://emanuel-kviz.up.railway.app/']
