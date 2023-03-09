@@ -16,7 +16,7 @@ class FormaTEXT(forms.Form):
     mjerenje_11 = forms.CharField(max_length = 6,label=mark_safe('<strong>10.Ime Izakovog prvorođenca?</strong>'))
     mjerenje_12 = forms.CharField(max_length = 200,label=mark_safe('<strong>11.Koliko djece je imao Jakov?</strong>'))
     mjerenje_13 = forms.CharField(max_length = 200,label=mark_safe('<strong>12. Kako se zvao najmlađi Jakovljev sin?<strong>'))
-    mjerenje_14 = forms.CharField(max_length = 200,label=mark_safe('<strong>13. Koliko su godina Izraelci morali biti u Egiptu?</strong>'))
+    mjerenje_14 = forms.CharField(max_length = 200,label=mark_safe('<strong>13. Upravitelj cijelog Egipta, sin Jakovljev?</strong>'))
     mjerenje_15 = forms.CharField(max_length = 200,label=mark_safe('<strong>14.Bogataš iz Arabije koji je preživio teške patnje?</strong>'))
     mjerenje_16 = forms.CharField(max_length = 200,label=mark_safe('<strong>15. Aronov brat</strong>'))
     mjerenje_17 = forms.CharField(max_length = 200,label=mark_safe('<strong>16.Kako se zove brdo na kojem je Bog dao 10 zapovjedi?</strong>'))
