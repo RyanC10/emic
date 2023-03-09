@@ -63,7 +63,7 @@ class pocetna(TemplateView):
         odgovori = [x.replace(' ', '') for x in odgovori]
         odgovori = [x.lower() for x in odgovori]
         #print(odgovori)
-        tocni_odgovori=['set','metuzalem','henok','40','duga','noa','ur','melkisedek','175','ezav','13','benjamin','400',
+        tocni_odgovori=['set','metuzalem','henok','40','duga','noa','ur','melkisedek','175','ezav','13','benjamin','josip',
                         'job','mojsije','horeb','leviti','aron','40','jošua','jerihon','dalila','david','batšeba','salomon','ilija','jeremija','izajia']
         
         s = set(tocni_odgovori)
