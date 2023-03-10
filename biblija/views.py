@@ -25,6 +25,7 @@ class pocetna(TemplateView):
         return render(request, self.template_name, {'form':form})
 
     def post(self,request):
+        print("pokrenuta aplikacija")
         mjerenje_1 = request.POST.get('mjerenje_1')
         mjerenje_2 = request.POST.get('mjerenje_2')
         mjerenje_3 = request.POST.get('mjerenje_3')
