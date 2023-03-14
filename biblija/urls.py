@@ -9,7 +9,7 @@ urlpatterns = [
    
     path('e02/',views.e02),
     path('kraj/<radnom>/',views.kraj),
-    url(r'download/', views.ispis, name='ispis'),
+    path(r'download/', views.ispis, name='ispis'),
     
    
    
