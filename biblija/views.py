@@ -101,3 +101,30 @@ def kraj(request,radnom):
                     
 
     return render(request, 'kraj.html',)
+
+def ispis(request):
+    data = {
+      "calories": [420, 380, 390],
+      "duration": [50, 40, 45]
+    }
+
+    
+    df = pd.DataFrame(data)
+
+        
+    from django.http import HttpResponse    
+    from io import BytesIO as IO 
+    excel_file = IO()
+    writer = pd.ExcelWriter(excel_file, engine='xlsxwriter')
+    df.to_excel(writer, sheet_name='izracun', index=False)
+
+
+    
+    writer.save()
+    writer.close()
+    excel_file.seek(0)
+    response = HttpResponse(excel_file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=AAnfo_A.xlsx'
+    
+    return response  
+
