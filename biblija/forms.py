@@ -32,3 +32,10 @@ class FormaTEXT(forms.Form):
     mjerenje_27 = forms.CharField(max_length = 200,label=mark_safe('<strong>26. Zaustavio kišu i ponovo je vratio nakon 3 godine</strong>'))
     mjerenje_28 = forms.CharField(max_length = 200,label=mark_safe('<strong>27.Koji prorok plače pred razvalinama Jeruzalema?</strong>'))
     mjerenje_29 = forms.CharField(max_length = 200,label=mark_safe('<strong>28.Dijete kojem će ime biti Emanuel?</strong>'))
+    
+
+
+class FormaMAJA(forms.Form):
+    tekst = forms.CharField(help_text=u"Ovdje su odgovori koji će zavrsiti u excelu", label=mark_safe('<strong>Odgovori</strong>'),widget=forms.Textarea(attrs={"rows":2, "cols":1,'placeholder': 'Izlazno'}))  
+    potpis = forms.CharField(label=mark_safe('<strong>Potpis</strong>'),widget=forms.Textarea(attrs={"rows":1, "cols":1,'placeholder': 'pregledao'}))  
+   
