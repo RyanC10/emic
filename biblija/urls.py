@@ -1,5 +1,5 @@
 from django.urls import path
-from biblija.views import pocetna
+from biblija.views import pocetna,majaforma
 from . import views
 
 urlpatterns = [
