@@ -11,6 +11,11 @@ urlpatterns = [
     path('kraj/<radnom>/',views.kraj),
     path(r'download/', views.ispis, name='ispis'),
     
+      path('maja', views.maja, name='maja'),
+
+    path('majaforma', majaforma.as_view()),
+     path('downloadmaja/', views.ispismaja, name='ispis'),
+    
    
    
 ]   
