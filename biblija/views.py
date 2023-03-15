@@ -1,9 +1,94 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from biblija.forms import FormaTEXT
+from biblija.forms import FormaTEXT, FormaMAJA
 import pandas as pd
+import json
 from pandas import ExcelWriter
+
+
+class majaforma(TemplateView):
+    
+    
+    template_name='maja.html'
+
+    def get(self,request):
+        form = FormaMAJA()         
+        
+        return render(request, self.template_name, {'form':form})
+
+    def post(self,request):
+        tekstjson = request.POST.get('tekst')
+        potpis = request.POST.get('potpis')
+        print(potpis)
+
+
+        print(tekstjson)
+        print(type(tekstjson))
+        # Converting string to list
+        res = json.loads(tekstjson)
+        print(res)
+        df = pd.DataFrame(res)
+        print(df)
+        df['pregledao']=potpis
+        df_za_download = df.to_json()
+        request.session['za_download'] = df_za_download
+
+        df=df.to_html
+
+        args= {'tekstjson':tekstjson,
+               'df':df}
+       
+    
+        return render(request, "rezultatmaja.html",args)
+    
+
+def ispismaja(request):
+    izvor = request.session.get('za_download')
+   
+    #print(type(izvor))
+    df_1=json.loads(izvor)
+    #print(type(df_1))
+    #print(df_1)
+    df_1=pd.DataFrame.from_dict(df_1)
+    doktor=df_1.iloc[0][10]
+        
+    from django.http import HttpResponse    
+    from io import BytesIO as IO 
+    excel_file = IO()
+    writer = pd.ExcelWriter(excel_file, engine='xlsxwriter')
+    df_1.to_excel(writer, sheet_name='anketa', index=False)
+    workbook  = writer.book
+    worksheet = writer.sheets['anketa']
+
+  
+    formatB = workbook.add_format({'align': 'center'})
+    worksheet.set_column('A:K', 20, formatB)
+
+
+        
+    worksheet.add_table('A1:K60', {'header_row': 0})
+ 
+
+    
+    writer.save()
+    writer.close()
+    excel_file.seek(0)
+    response = HttpResponse(excel_file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename='+str(doktor)+'_ispis.xlsx'
+    
+    return response  
+
+
+def maja(request):
+    
+                
+ 
+       
+    args = {}      
+   
+    return render(request, 'maja.html',args)
+
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
