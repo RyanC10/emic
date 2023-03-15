@@ -1,0 +1,459 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Maja
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"> 
+  <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" /> 
+  <link href="{% static 'assets/css/black-dashboard.css' %}" rel="stylesheet" />
+<script src="{% static 'personal/skripte/jquery-3.2.1.min.js' %}"></script>
+		<script src="{% static 'personal/skripte/jquery.mask.min.js' %}"></script>
+   <!--  <script src="{% static 'personal/skripte/majajs.js' %}"></script> -->
+<style>
+hr{
+    border:0;
+    margin:0;
+    width:100%;
+    height:2px;
+    background:#d346b1;
+}
+  </style>
+
+
+  </head>
+
+
+
+<body>
+
+<br>
+
+  <div class="container">
+
+    <h1>0. Ime i Prezime pacijenta</h1>
+
+<form >
+  <label for="fname">Unesi ime i prezime pacijenta:</label>
+  <input type="text" id="fname" name="fname">
+</form>
+<br><hr>
+
+
+    <div class="row">
+      <div class="col-sm">
+        <br>
+        <h1>1. Gustoća parenthejda</h1>
+
+  <p>Odaberi jednu od opcija:</p>
+  
+          <form name="forma" id="forma">
+                <input type="radio" name="parenthejda" id="1A"  value="A">
+                <label for="A">A</label>
+                <input type="radio" name="parenthejda"  id="1B"  value="B">
+                <label for="B">B</label>
+                <input type="radio"  name="parenthejda"  id="1C"  value="C">
+                <label for="C">C</label>
+              <input type="radio"  name="parenthejda"  id="1D"  value="D">
+                <label for="D">D</label>
+          </form>
+      </div>
+      
+      
+    </div>
+    <br><hr><br>
+  </div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>2. Postoji li linija</h1>
+
+<p>Ako je odgovor "DA" , kreni >>>>>>>>>>></p>
+<p>Ako je odgovor "NE" , idi na pitanje br.3.:</p>
+
+<form >
+  <input type="radio" id="2A"  name="linija" value="Da">
+  <label for="A">DA</label>
+  <input type="radio" id="2B"  name="linija" value="Ne">
+  <label for="B">NE</label>
+</form>
+    </div>
+    <div class="col-sm">
+      <div class="row">
+        <h3>Oblik:</h3>
+<br>
+          <form >
+            <input type="radio" id="okrugao" name="oblik"  value="Okrugao"  >
+            <label for="A">Okrugao</label>
+            <input type="radio" id="Ovalno" name="oblik" value="Ovalno">
+            <label for="B">Ovalno </label>
+          <input type="radio" id="nepravilno" name="oblik" value="Nepravilno">
+            <label for="C">nepravilno </label>       
+          <input type="radio" id="nista" name="oblik" value="nista"  checked="checked">
+            <label for="D">Nista </label>       
+       </form>
+
+       <h3>Margine:</h3>
+       <br>
+                 <form >
+                   <input type="radio" id="A" name="margine" value="A">
+                   <label for="A">Okrugao</label>
+                   <input type="radio" id="B" name="margine" value="B">
+                   <label for="B">Ovalno </label>
+                 <input type="radio" id="B" name="margine" value="B">
+                   <label for="B">nepravilno </label>    
+                 <input type="radio" id="nista" name="margine" value="nista"  checked="checked">
+                   <label for="D">Nista </label>      
+              </form>
+
+              <h3>Dezelit:</h3>
+              <br>
+                        <form action="/action_page.php">
+                          <input type="radio" id="A" name="dezelit" value="A">
+                          <label for="A">Okrugao</label>
+                          <input type="radio" id="B" name="dezelit" value="B">
+                          <label for="B">Ovalno </label>
+                        <input type="radio" id="B" name="dezelit" value="C">
+                          <label for="B">nepravilno </label>  
+                        <input type="radio" id="nista" name="dezelit" value="nista"  checked="checked">
+                          <label for="D">Nista </label>        
+                     </form>
+
+                     <h3>Lokacija:</h3>
+                     <br>
+                               <form >
+                                 <input type="radio" id="A" name="lokacija" value="gored">
+                                 <label for="A">Okrugao</label>
+                                 <input type="radio" id="B" name="lokacija" value="dole">
+                                 <label for="B">Ovalno </label>
+                               <input type="radio" id="B" name="lokacija" value="livo">
+                                 <label for="B">nepravilno </label>    
+                               <input type="radio" id="nista" name="lokacija" value="nista"  checked="checked">
+                                 <label for="D">Nista </label>      
+                            </form>
+
+      </div>
+    </div>
+    <div class="col-sm">
+  
+    </div>
+  </div>
+  <br><hr><br>
+</div>
+ 
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>3. Kvaliteta</h1>
+
+      <p>Ako je odgovor "DA" , kreni >>>>>>>>>>></p>
+      <p>Ako je odgovor "NE" , potvrdi odgovore</p>
+
+<form>
+  <input type="radio" id="A" name="kvaliteta" value="DA">
+  <label for="A">DA</label>
+  <input type="radio" id="B" name="kvaliteta" value="NE">
+  <label for="B">NE</label>
+
+
+</form>
+    </div>
+    <div class="col-sm">
+      <div class="row">
+        <h3>Distribucija:</h3>
+<br>
+          <form >
+            <input type="radio" id="A" name="distribucija" value="dif">
+            <label for="A">dif</label>
+            <input type="radio" id="B" name="distribucija" value="reg">
+            <label for="B">reg </label>
+          <input type="radio" id="C" name="distribucija" value="lin">
+            <label for="C">linearno </label>   
+          <input type="radio" id="nista" name="distribucija" value="nista"  checked="checked">
+            <label for="D">Nista </label>        
+       </form>
+     </div>
+
+     <div class="row">
+      <h3>tip distribucije:    </h3>
+<br>
+        <form >
+          <input type="radio" id="A" name="tip" value="A">
+          <label for="A">dif</label>
+          <input type="radio" id="B" name="tip" value="B">
+          <label for="B">reg </label>
+        <input type="radio" id="B" name="tip" value="B">
+          <label for="B">linearno </label>    
+        <input type="radio" id="nista" name="tip" value="nista"  checked="checked">
+          <label for="D">Nista </label>       
+     </form>
+   </div>
+
+
+    </div>
+    <div class="col-sm">
+      
+    </div>
+  </div>
+  <br><hr><br>
+</div>
+ 
+
+
+
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+<br>
+<button type="button" class="btn btn-primary" onclick="displayRadioValue()">
+  Potvrdi odgovore i kreni na sljedeći krug
+</button>
+
+<br><br><br>
+
+<div class="container">
+  Rezultantno:
+  <div class="row">
+   
+    <div class="col-sm-3">Ime 
+      <p id="odabranoime"></p>
+     
+      </div>
+
+      <div class="col-sm-3">Gustoća:
+        <p id="prvo"></p>
+      
+  
+       
+        </div>
+
+      <div class="col-sm-3">Linija
+       
+        <p id="drugo"></p>
+        <p id="trece"></p>
+        <p id="cetvrto"></p>
+        <p id="peto"></p>
+        <p id="sesto"></p>
+  
+       
+        </div>
+
+        <div class="col-sm-3">kvaliteta
+          <p id="sedmo"></p>
+          <p id="osmo"></p>
+          <p id="deveto"></p>
+        
+    
+         
+          </div>
+
+     
+      </div>
+      <hr><br><br>
+      <p id="df" style="display: none;"></p>
+    </div>
+  </div>
+
+              
+
+
+
+  </div>
+
+
+
+  <br>
+   <!--style="display: none;"-->
+ {% load widget_tweaks %}
+ <form method="post" >
+ {% csrf_token %}
+ {% for hidden_field in form.hidden_fields %}
+ {{ hidden_field }}
+ {% endfor %}
+ {% if form.non_field_errors %}
+ <div class="alert alert-danger" role="alert" >
+ {% for error in form.non_field_errors %}
+ {{ error }}
+ {% endfor %}
+ </div>
+ {% endif %}
+ 
+ {% for field in form.visible_fields %}
+ <div class="form-group" >
+ {{ field.label_tag }}
+ {% if form.is_bound %}
+ {% if field.errors %}
+ {% render_field field class="form-control is-invalid" %}
+ {% for error in field.errors %}
+ <div class="invalid-feedback">
+ {{ error }}
+ </div>
+ {% endfor %}
+ {% else %}
+ {% render_field field class="form-control is-valid" %}
+ {% endif %}
+ {% else %}
+ {% render_field field class="form-control" %}
+ {% endif %}
+ {% if field.help_text %}
+ <small class="form-text text-muted">{{ field.help_text }}</small>
+ {% endif %}
+ </div>
+ {% endfor %}
+ <br>
+  <button type="submit" id="prijenos" class="btn btn-danger btn-lg btn-block" >Kreiraj tablicu odgovora spremnu za excell</button><br>
+ 
+ 
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+<script>
+
+var spremi = [];
+
+  function displayRadioValue() {
+    //--------------------------------------------------
+    var ime = document.getElementById('fname').value;
+    document.getElementById("odabranoime").innerHTML= "Naziv: "+ime;
+    //--------------------------------------------------
+    var parenthejda = document.getElementsByName('parenthejda');
+        
+        for(i = 0; i < parenthejda.length; i++) {
+            if(parenthejda[i].checked)
+            document.getElementById("prvo").innerHTML
+                    = "Gustoća: "+parenthejda[i].value;
+        }
+    //--------------------------------------------------
+    var linija = document.getElementsByName('linija');
+        
+        for(i = 0; i < linija.length; i++) {
+            if(linija[i].checked)
+            document.getElementById("drugo").innerHTML
+                    = "Linija: "+linija[i].value;
+        }
+    //--------------------------------------------------
+    var oblik = document.getElementsByName('oblik');
+        
+        for(i = 0; i < oblik.length; i++) {
+            if(oblik[i].checked)
+            document.getElementById("trece").innerHTML
+                    = "Oblik: "+oblik[i].value;
+        }
+    //--------------------------------------------------
+    var margine = document.getElementsByName('margine');
+        
+        for(i = 0; i < margine.length; i++) {
+            if(margine[i].checked)
+            document.getElementById("cetvrto").innerHTML
+                    = "Margine: "+margine[i].value;
+        }
+    //--------------------------------------------------
+    var dezelit = document.getElementsByName('dezelit');
+        
+        for(i = 0; i < dezelit.length; i++) {
+            if(dezelit[i].checked)
+            document.getElementById("peto").innerHTML
+                    = "dezelit: "+dezelit[i].value;
+        }
+    //--------------------------------------------------
+    var lokacija = document.getElementsByName('lokacija');
+        
+        for(i = 0; i < lokacija.length; i++) {
+            if(lokacija[i].checked)
+            document.getElementById("sesto").innerHTML
+                    = "lokacija: "+lokacija[i].value;
+        }
+    //--------------------------------------------------
+    var kvaliteta = document.getElementsByName('kvaliteta');
+        
+        for(i = 0; i < kvaliteta.length; i++) {
+            if(kvaliteta[i].checked)
+            document.getElementById("sedmo").innerHTML
+                    = "kvaliteta: "+kvaliteta[i].value;
+        }
+    //--------------------------------------------------
+    var distribucija = document.getElementsByName('distribucija');
+        
+        for(i = 0; i < distribucija.length; i++) {
+            if(distribucija[i].checked)
+            document.getElementById("osmo").innerHTML
+                    = "distribucija: "+distribucija[i].value;
+        }
+    //--------------------------------------------------
+    var tip = document.getElementsByName('tip');
+        
+        for(i = 0; i < tip.length; i++) {
+            if(tip[i].checked)
+            document.getElementById("deveto").innerHTML
+                    = "tip: "+tip[i].value;
+        }
+    //--------------------------------------------------
+  
+      
+      
+      
+
+  
+      
+        var prvodf = document.getElementById('prvo').innerHTML;
+        var drugodf = document.getElementById('drugo').innerHTML;
+        var trecedf = document.getElementById('trece').innerHTML;
+        var cetvrtodf = document.getElementById('cetvrto').innerHTML;
+        var petodf = document.getElementById('peto').innerHTML;
+        var sestodf = document.getElementById('sesto').innerHTML;
+        var sedmodf = document.getElementById('sedmo').innerHTML;
+        var osmodf = document.getElementById('osmo').innerHTML;
+        var devetodf = document.getElementById('deveto').innerHTML;
+    
+
+        var baza = {ime:ime,prvodf:prvodf,drugodf:drugodf,trecedf:trecedf,cetvrtodf:cetvrtodf,petodf:petodf,sestodf:sestodf,sedmodf:sedmodf,osmodf:osmodf,devetodf:devetodf}
+
+        spremi.push(baza);
+        console.log(spremi);
+       
+        console.log(JSON.stringify(spremi));
+        var df = JSON.stringify(spremi)
+
+        
+        document.getElementById("df").innerHTML= df;
+
+       
+        document.getElementById("id_tekst").innerHTML= df;
+        
+        
+        document.getElementByName("forma").reset();
+
+         
+
+  }
+
+
+  
+
+
+  
+  </script>
