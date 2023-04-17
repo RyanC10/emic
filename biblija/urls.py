@@ -12,9 +12,11 @@ urlpatterns = [
     path(r'download/', views.ispis, name='ispis'),
     
       path('maja', views.maja, name='maja'),
+    
 
     path('majaforma', majaforma.as_view()),
      path('downloadmaja/', views.ispismaja, name='ispis'),
+    path('hep', views.hep, name='hep'),
     
    
    
