@@ -26,7 +26,7 @@ SECRET_KEY = '(_xwg50-!iqs3k%1^&ju&sdj0_!m_$cmgbv^%)j8vvpz^qii@*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['emanuel-kviz.up.railway.app']
+ALLOWED_HOSTS = ['emanuel-kviz.up.railway.app','edsport.up.railway.app']
 
 
 # Application definition
