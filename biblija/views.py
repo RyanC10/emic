@@ -6,6 +6,8 @@ import pandas as pd
 import json
 from pandas import ExcelWriter
 
+def hep(request):   
+    return render(request, 'hep.html',)
 
 class majaforma(TemplateView):
     
